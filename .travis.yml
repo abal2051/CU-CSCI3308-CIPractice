@@ -1,4 +1,5 @@
 language: c
 compiler: gcc
-install: make get-deps
-./configure make clean && make && make test
+install: make dep
+script: make test
+sudo: required
