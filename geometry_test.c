@@ -145,7 +145,7 @@ START_TEST(test_2d_midpoint)
 }
 END_TEST
 
-START_TEST(test_2d_area_triangle)
+START_TEST(test_my_2d_area_func)
 {
     coord_2d_t a;
     coord_2d_t b;
@@ -164,7 +164,7 @@ START_TEST(test_2d_area_triangle)
 }
 END_TEST
 
-START_TEST(testNEG_2d_area_triangle)
+START_TEST(test_my_2d_area_funcNEG)
 {
     coord_2d_t a;
     coord_2d_t b;
@@ -202,10 +202,10 @@ Suite* coord_2d_suite(void)
     tcase_add_test(tc_2d_midpoint, test_2d_midpoint);
 
     TCase* tc_2d_area_triangle = tcase_create("coord_2d_area_triangle");
-    tcase_add_test(tc_2d_area_triangle, test_2d_area_triangle);
+    tcase_add_test(tc_2d_area_triangle, test_my_2d_area_func);
 
-    TCase* tcNEG_2d_area_triangle = tcase_create("coord_2d_area_triangleNEG");
-    tcase_add_test(tcNEG_2d_area_triangle, testNEG_2d_area_triangle);
+    TCase* tc_2d_area_triangleNEG = tcase_create("coord_2d_area_triangleNEG");
+    tcase_add_test(tc_2d_area_triangleNEG, test_my_2d_area_funcNEG);
 
 
     /* Add Cases to Suite */
@@ -213,7 +213,7 @@ Suite* coord_2d_suite(void)
     suite_add_tcase(s, tc_2d_dist);
     suite_add_tcase(s, tc_2d_midpoint);
     suite_add_tcase(s, tc_2d_area_triangle);
-    suite_add_tcase(s, tcNEG_2d_area_triangle);
+    suite_add_tcase(s, tc_2d_area_triangleNEG);
 
 
     /* Return Suite */

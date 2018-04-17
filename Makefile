@@ -17,7 +17,7 @@ geometry_test: geometry_test.o geometry.o
 	$(CC) $(LFLAGS) $^ $(PKG_CHECK_LIBS) $(PKG_MATH_LIBS) -o $@
 
 test: geometry_test.o geometry.o
-	$(CC) $(LFLAGS) $^ $(PKG_CHECK_LIBS) $(PKG_MATH_LIBS) -o $@
+	$(CC) $(LFLAGS) $^ $(PKG_CHECK_LIBS) $(PKG_MATH_LIBS) -o geometry_test
 
 
 geometry_test.o: geometry_test.c geometry.h
